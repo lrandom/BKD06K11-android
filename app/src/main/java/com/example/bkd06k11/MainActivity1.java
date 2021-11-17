@@ -44,7 +44,12 @@ public class MainActivity1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Uri uri = Uri.parse("https://google.com.vn");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+           /*     Intent intent = new Intent(Intent.ACTION_VIEW, uri);*/
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(uri);
                 startActivity(intent);
             }
         });
