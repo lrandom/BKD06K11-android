@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="20sp"
-                android:text="@string/phone"
-                android:textSize="20sp"
-                android:typeface="monospace" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="20sp"
-                android:text="@string/phone"
-                android:textSize="20sp"
-                android:typeface="monospace" />
-        </LinearLayout>
-
-
-    </ScrollView>
-</LinearLayout>
+    <Button
+        android:id="@+id/btnReturnResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return Data"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="329dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
