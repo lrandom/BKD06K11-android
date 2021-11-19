@@ -10,38 +10,47 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
-    Button btnReturnResult;
+    public static final String TAG = "MainActivity2";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        Log.i(TAG, "onCreate");
+    }
 
-/*        String name = getIntent().getStringExtra("NAME");
-        String address = getIntent().getStringExtra("ADDRESS");*/
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart");
+    }
 
-       /* Bundle bundle = getIntent().getExtras();
-        String name1 = bundle.getString(MainActivity1.TAG_NAME);
-        String address1 = bundle.getString("ADDRESS");*/
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume");
+    }
 
-/*
-        Log.i("name", name);
-        Log.i("address", address);
-*/
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause");
+    }
 
-        /*Log.i("name", name1);
-        Log.i("address", address1);*/
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop");
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart");
+    }
 
-        btnReturnResult = findViewById(R.id.btnReturnResult);
-        btnReturnResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.putExtra("NAME", "Nguyen Thanh Luan");
-                setResult(RESULT_OK,intent);
-                finish();
-            }
-
-        });
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy");
     }
 }

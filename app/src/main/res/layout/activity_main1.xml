@@ -7,6 +7,7 @@
     tools:context=".MainActivity1">
 
     <Button
+        android:onClick="startActivity2"
         android:id="@+id/btnStartActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,27 +17,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.468" />
 
-    <Button
-        android:id="@+id/btnOpenLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Open link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStartActivity" />
-
-    <Button
-        android:id="@+id/btnStartaForResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Start Activity For Result"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOpenLink" />
 </androidx.constraintlayout.widget.ConstraintLayout>
