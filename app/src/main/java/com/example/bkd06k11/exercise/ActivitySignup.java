@@ -27,6 +27,5 @@ public class ActivitySignup extends AppCompatActivity {
         intent.putExtra("userName", edtUserName.getText().toString());
         intent.putExtra("phone", edtPhone.getText().toString());
         startActivity(intent);
-
     }
 }
