@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openWebPage(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vnexpress.vn"));
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+       // intent.addCategory(Intent.CATEGORY_BROWSABLE);
         // if (intent.resolveActivity(getPackageManager()) != null) {
         try {
             startActivity(intent);
