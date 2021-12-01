@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberThree"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -37,6 +38,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNumberTwo" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberFive"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -49,6 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberOne"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -62,6 +65,8 @@
         app:layout_constraintTop_toBottomOf="@+id/edtShow" />
 
     <Button
+
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberFour"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -74,6 +79,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNumberThree" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberSix"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -87,6 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNumberOne" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberSeven"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -99,6 +106,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNumberSix" />
 
     <Button
+        android:onClick="calc"
         android:id="@+id/btnEqual"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -114,6 +122,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNumberNine" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberEight"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -127,6 +136,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNumberSeven" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberNine"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -139,6 +149,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnNumberEight" />
 
     <Button
+        android:onClick="setOperationName"
         android:id="@+id/btnPlus"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -152,6 +163,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNumberSix" />
 
     <Button
+        android:onClick="setOperationName"
         android:id="@+id/btnSub"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -164,6 +176,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnPlus" />
 
     <Button
+        android:onClick="setOperationName"
         android:id="@+id/btnMultiple"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -176,6 +189,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnSub" />
 
     <Button
+        android:onClick="setOperationName"
         android:id="@+id/btnDivide"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -200,6 +214,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnDivide" />
 
     <Button
+        android:onClick="setValueForNumberButton"
         android:id="@+id/btnNumberTwo"
         android:layout_width="60dp"
         android:layout_height="60dp"
