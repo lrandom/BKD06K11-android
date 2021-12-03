@@ -41,7 +41,7 @@ public class ExampleUnitTest {
 
     @Test
     public void equalArr() {
-        assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
+        assertArrayEquals(new int[]{1, 2, 3}, new int[]{1, 2, 3});
     }
 
     @Test

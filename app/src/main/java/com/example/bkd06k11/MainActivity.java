@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     public void setValueForNumberOne(View v) {
         TextView tv = (TextView) v;
@@ -86,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         //show kết quả
         edtShow.setText(String.format(this.result.toString()));
     }
+
 
 
 }
