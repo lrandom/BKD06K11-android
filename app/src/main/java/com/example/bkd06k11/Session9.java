@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RadioButton;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Session9 extends AppCompatActivity {
     ArrayList<String> arrayList = new ArrayList<>();
+    String gender = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,43 @@ public class Session9 extends AppCompatActivity {
         for (String item : arrayList
         ) {
             System.out.println(item);
+        }
+
+        //Gioi tinh la
+        System.out.println(gender);
+    }
+
+    public void getGender(View v) {
+        //kiểm tra xem radio có đc check hay ko
+        boolean checked = ((RadioButton) v).isChecked();
+/*        if (checked) {
+            if (v.getId() == R.id.rdoFemale) {
+                gender = "female";
+            } else if (v.getId() == R.id.rdoMale) {
+                gender = "male";
+            } else if (v.getId() == R.id.rdoLGBT) {
+                gender = "LGBT";
+            }
+        }*/
+
+        switch (v.getId()) {
+            case R.id.rdoFemale:
+                if (checked) {
+                    gender = "female";
+                }
+                break;
+
+            case R.id.rdoMale:
+                if (checked) {
+                    gender = "male";
+                }
+                break;
+
+            case R.id.rdoLGBT:
+                if (checked) {
+                    gender = "lgbt";
+                }
+                break;
         }
     }
 }
