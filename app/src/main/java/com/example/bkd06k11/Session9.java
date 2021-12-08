@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.ToggleButton;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -13,11 +15,26 @@ import java.util.ArrayList;
 public class Session9 extends AppCompatActivity {
     ArrayList<String> arrayList = new ArrayList<>();
     String gender = "";
+    ToggleButton tglAvancedConfig;
+    boolean configOn = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session9);
+        tglAvancedConfig = findViewById(R.id.tglAvancedConfig);
+        tglAvancedConfig.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                configOn = isChecked;
+                if (isChecked) {
+                    System.out.println("on");
+                }else{
+                    System.out.println("off");
+                }
+            }
+        });
     }
 
     public void onCheckboxClickedHandler(View view) {
