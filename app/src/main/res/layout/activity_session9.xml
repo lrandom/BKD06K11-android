@@ -84,4 +84,9 @@
         android:layout_height="wrap_content"
         android:text="Cấu hình nâng cao"/>
 
+    <Spinner
+        android:id="@+id/spnPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

@@ -7,7 +7,11 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.ToggleButton;
+
+import com.example.bkd06k11.adapters.PersonAdapter;
+import com.example.bkd06k11.domains.Person;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -17,6 +21,7 @@ public class Session9 extends AppCompatActivity {
     String gender = "";
     ToggleButton tglAvancedConfig;
     boolean configOn = false;
+    Spinner spinner;
 
 
     @Override
@@ -35,6 +40,16 @@ public class Session9 extends AppCompatActivity {
                 }
             }
         });
+
+        spinner = findViewById(R.id.spnPerson);
+        ArrayList<Person> persons = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            Person person = new Person("Nguyen Thanh Nam "+i,10+i+"");
+            persons.add(person);
+        }
+
+        PersonAdapter personAdapter = new PersonAdapter(Session9.this, persons);
+        spinner.setAdapter(personAdapter);
     }
 
     public void onCheckboxClickedHandler(View view) {
