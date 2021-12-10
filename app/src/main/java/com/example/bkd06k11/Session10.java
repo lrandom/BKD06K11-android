@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,14 +14,55 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Session10 extends AppCompatActivity {
-    Button btnOpenContextMenu;
+    Button btnOpenContextMenu, btnStartActionMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session10);
         btnOpenContextMenu = findViewById(R.id.btnOpenContextMenu);
+        btnStartActionMode = findViewById(R.id.btnStartActionMode);
         registerForContextMenu(btnOpenContextMenu);
+
+        btnStartActionMode.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Session10.this.startActionMode(new ActionMode.Callback() {
+                    @Override
+                    public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                        MenuInflater menuInflater = getMenuInflater();
+                        menuInflater.inflate(R.menu.context_action_bar_menu, menu);
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.item_share:
+                                Toast.makeText(Session10.this, "you click share", Toast.LENGTH_SHORT).show();
+                                break;
+
+                            case R.id.item_note:
+                                Toast.makeText(Session10.this, "you click note", Toast.LENGTH_SHORT).show();
+                                break;
+                        }
+                        return true;
+                    }
+
+                    @Override
+                    public void onDestroyActionMode(ActionMode mode) {
+
+                    }
+                });
+                return false;
+            }
+
+        });
     }
 
     @Override
