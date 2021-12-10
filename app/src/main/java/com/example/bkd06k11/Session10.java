@@ -1,8 +1,10 @@
 package com.example.bkd06k11;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -15,7 +17,7 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class Session10 extends AppCompatActivity {
-    Button btnOpenContextMenu, btnStartActionMode, btnOpenPopupMenu;
+    Button btnOpenContextMenu, btnStartActionMode, btnOpenPopupMenu, btnOpenAlertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,35 @@ public class Session10 extends AppCompatActivity {
         btnOpenContextMenu = findViewById(R.id.btnOpenContextMenu);
         btnStartActionMode = findViewById(R.id.btnStartActionMode);
         btnOpenPopupMenu = findViewById(R.id.btnOpenPopupMenu);
+        btnOpenAlertDialog = findViewById(R.id.btnOpenDialog);
+
+        btnOpenAlertDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Session10.this);
+                builder.setTitle("Thông báo");
+                builder.setMessage("Bạn đã trúng 100 tỷ Jackpot, không làm mà đòi có ăn thì chỉ có chơi vietlot, Bạn có muốn nhận giải");
+                builder.setPositiveButton("Tôi đồng ý nhận giải, chỉ có ngu ms ko nhận",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //tiêm code xử lý vào đây
+                                Toast.makeText(Session10.this, "Bạn đã nhận giải", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                builder.setNegativeButton("Nhận làm gì, nhà mình giàu sẵn rồi", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //tiêm code xử lý khi không nhận giải
+                        Toast.makeText(Session10.this, "Bạn đã không nhận giải, phí !!!!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+            }
+        });
+
         registerForContextMenu(btnOpenContextMenu);
 
         btnStartActionMode.setOnLongClickListener(new View.OnLongClickListener() {
