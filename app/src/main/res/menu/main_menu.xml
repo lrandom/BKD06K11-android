@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Add"
+        android:id="@+id/item_add"
+        />
+    <item android:title="Edit"
+        android:id="@+id/item_edit"
+        />
+    <item android:title="Delete"
+        android:id="@+id/item_delete"
+        />
+</menu>

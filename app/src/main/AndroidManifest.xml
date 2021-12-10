@@ -23,8 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BKD06K11">
         <activity
-            android:name=".Session9"
-            android:exported="true">
+            android:name=".Session10"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,13 +33,16 @@
         </activity>
 
         <activity
-            android:name=".Session8"
-            android:exported="true">
-
+            android:name=".Session9"
+            android:exported="false">
         </activity>
+
+        <activity
+            android:name=".Session8"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
