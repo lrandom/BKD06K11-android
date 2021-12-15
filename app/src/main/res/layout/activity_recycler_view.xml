@@ -7,12 +7,6 @@
     android:orientation="vertical"
     tools:context=".RecyclerViewActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/phone"
-        ></TextView>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcCountry"
         android:layout_width="match_parent"
