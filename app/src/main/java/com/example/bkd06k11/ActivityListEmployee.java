@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 import com.example.bkd06k11.adapters.EmployeeAdapter;
 import com.example.bkd06k11.domains.Employee;
+import com.example.bkd06k11.services.ApiService;
+import com.example.bkd06k11.services.RestClient;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,6 +23,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ActivityListEmployee extends AppCompatActivity {
     RecyclerView rcListEmployee;
     ArrayList<Employee> employees = new ArrayList<>();
@@ -30,16 +36,37 @@ public class ActivityListEmployee extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_employee);
-        new LoadEmployeeAsyncTask("http://192.168.1.5/employee_services/GetData.php").execute();
+        //new LoadEmployeeAsyncTask("http://192.168.1.5/employee_services/GetData.php").execute();
         rcListEmployee = findViewById(R.id.rcEmployee);
 
         adapter = new EmployeeAdapter(ActivityListEmployee.this, employees);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ActivityListEmployee.this, LinearLayoutManager.VERTICAL, false);
         rcListEmployee.setLayoutManager(linearLayoutManager);
         rcListEmployee.setAdapter(adapter);
+
+        ApiService apiService = RestClient.getApiService();
+        Call<ArrayList<Employee>> call = apiService.getEmployees();
+        call.enqueue(new Callback<ArrayList<Employee>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Employee>> call,
+                                   Response<ArrayList<Employee>> response) {
+                ArrayList<Employee> employeesTmp = response.body();
+                for (Employee employee: employeesTmp
+                     ) {
+                    //System.out.println(employee.getName());
+                    employees.add(employee);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Employee>> call, Throwable t) {
+                System.out.println("Lỗi ko lấy đc dữ liệu");
+            }
+        });
     }
 
-    public class LoadEmployeeAsyncTask extends AsyncTask<Void, Long, String> {
+   /* public class LoadEmployeeAsyncTask extends AsyncTask<Void, Long, String> {
         String url;
 
         public LoadEmployeeAsyncTask(String url) {
@@ -94,5 +121,5 @@ public class ActivityListEmployee extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 }
