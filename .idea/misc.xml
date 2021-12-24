@@ -6,6 +6,7 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.26614583333333336" />
         <entry key="app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/border_note_item.xml" value="0.4517948717948718" />
         <entry key="app/src/main/res/drawable/button_style.xml" value="0.4588541666666667" />
         <entry key="app/src/main/res/drawable/edit_text_style.xml" value="0.4588541666666667" />
         <entry key="app/src/main/res/drawable/edt_bg.xml" value="0.4588541666666667" />
@@ -14,6 +15,7 @@
         <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.3328125" />
         <entry key="app/src/main/res/layout-land/activity_signup_1.xml" value="0.3747795414462081" />
         <entry key="app/src/main/res/layout/acitivity_demo_relative_layout.xml" value="0.4427083333333333" />
+        <entry key="app/src/main/res/layout/activity_add_note.xml" value="0.4427083333333333" />
         <entry key="app/src/main/res/layout/activity_check_state.xml" value="0.4427083333333333" />
         <entry key="app/src/main/res/layout/activity_confirm_info.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_constraint_layout.xml" value="0.36367753623188404" />
@@ -21,6 +23,7 @@
         <entry key="app/src/main/res/layout/activity_demo_frame_layout.xml" value="0.36367753623188404" />
         <entry key="app/src/main/res/layout/activity_demo_linear_layout.xml" value="0.36367753623188404" />
         <entry key="app/src/main/res/layout/activity_list_employee.xml" value="0.4661458333333333" />
+        <entry key="app/src/main/res/layout/activity_list_note.xml" value="0.4427083333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main1.xml" value="0.2864583333333333" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.25" />
@@ -39,6 +42,7 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3677536231884058" />
         <entry key="app/src/main/res/layout/item_country.xml" value="0.31666666666666665" />
         <entry key="app/src/main/res/layout/item_employee.xml" value="0.4661458333333333" />
+        <entry key="app/src/main/res/layout/item_note.xml" value="0.4427083333333333" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.4270833333333333" />
         <entry key="app/src/main/res/menu/context_action_bar_menu.xml" value="0.3854166666666667" />
         <entry key="app/src/main/res/menu/float_context_menu.xml" value="0.346875" />

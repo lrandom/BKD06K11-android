@@ -4,21 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-
-            <data android:scheme="https" />
-        </intent>
-        <intent>
-            <action android:name="android.intent.action.SENDTO" />
-
-            <data android:scheme="smsto" />
-        </intent>
-    </queries>
 
     <application
         android:allowBackup="true"
@@ -29,61 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BKD06K11">
         <activity
-            android:name=".ActivityListEmployee"
+            android:name=".activities.ActivityListNote"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityCheckState"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".DemoAsyncTaskLoader"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Session12"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".RecyclerViewActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Session10"
+            android:name=".activities.ActivityEditNote"
             android:exported="false" />
         <activity
-            android:name=".Session9"
-            android:exported="false" />
-        <activity
-            android:name=".Session8"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activities.ActivityAddNote"
             android:exported="false" />
     </application>
 

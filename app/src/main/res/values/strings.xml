@@ -1,21 +1,12 @@
 <resources>
     <string name="app_name">BKD06K11</string>
-    <string name="title_activity_main">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="demo_linear_layout">Demo linear layout</string>
-    <string name="demo_relative_layout">Demo Relative layout</string>
-    <string name="signup">Signup</string>
-    <string name="username">Username</string>
-    <string name="fullname">Fullname</string>
-    <string name="phone">Phone</string>
-    <string name="password">Password</string>
-    <string name="submit">Submit</string>
-    <string name="confirm_info">Confirm Info</string>
+    <string name="title">title</string>
+    <string name="content">content</string>
+    <string name="add">Add</string>
+    <string name="validate_error">Validate Error, Please fill all feild before submit</string>
+    <string name="add_successfully">Add successfully</string>
+    <string name="alert">Alert</string>
+    <string name="confirm_delete">Are you sure you want to delete this note ?</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
 </resources>
