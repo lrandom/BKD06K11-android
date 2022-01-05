@@ -9,4 +9,7 @@
     <string name="confirm_delete">Are you sure you want to delete this note ?</string>
     <string name="cancel">Cancel</string>
     <string name="delete">Delete</string>
+    <string name="delete_successfully">Delete Successfully</string>
+    <string name="edit_successfully">Edit Successfully</string>
+    <string name="update">Update</string>
 </resources>

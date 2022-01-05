@@ -14,19 +14,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BKD06K11">
         <activity
-            android:name=".activities.ActivityListNote"
+            android:name=".activities.ActivitySendBroadcast"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
-                <category android:name="android.intent.category.LAUNCHER"></category>
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+
         </activity>
         <activity
-            android:name=".activities.ActivityEditNote"
-            android:exported="false" />
-        <activity
-            android:name=".activities.ActivityAddNote"
-            android:exported="false" />
+            android:name=".activities.ActivityGetBroadCast"
+            android:exported="false">
+        </activity>
+
+        <receiver
+            android:exported="false"
+            android:name=".activities.MyBroadCast">
+            <intent-filter>
+                <action android:name="com.example.bkd06k11.SEND_FULL_NAME">
+
+                </action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
