@@ -14,29 +14,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BKD06K11">
         <activity
-            android:name=".activities.ActivitySendBroadcast"
+            android:name=".activities.ActivityDemoBoundService"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".activities.ActivityGetBroadCast"
-            android:exported="false">
+            android:name=".activities.ActivityDemoStartedService"
+            android:exported="true">
         </activity>
+        <activity
+            android:name=".activities.ActivitySendBroadcast"
+            android:exported="false"></activity>
+        <activity
+            android:name=".activities.ActivityGetBroadCast"
+            android:exported="false" />
 
         <receiver
-            android:exported="false"
-            android:name=".activities.MyBroadCast">
+            android:name=".activities.MyBroadCast"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.example.bkd06k11.SEND_FULL_NAME">
-
-                </action>
+                <action android:name="com.example.bkd06k11.SEND_FULL_NAME" />
             </intent-filter>
         </receiver>
+
+        <service android:name=".activities.StartedService" />
+        <service android:name=".activities.MyBoundService"/>
+        <service android:name=".activities.MyIntentService"/>
     </application>
 
 </manifest>
