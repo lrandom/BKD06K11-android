@@ -27,7 +27,7 @@
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main3.xml" value="0.25625" />
         <entry key="app/src/main/res/layout/activity_recycler_view.xml" value="0.31666666666666665" />
-        <entry key="app/src/main/res/layout/activity_second.xml" value="0.215625" />
+        <entry key="app/src/main/res/layout/activity_second.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_session10.xml" value="0.38229166666666664" />
         <entry key="app/src/main/res/layout/activity_session12.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_session8.xml" value="0.25" />
@@ -41,6 +41,7 @@
         <entry key="app/src/main/res/layout/item_country.xml" value="0.31666666666666665" />
         <entry key="app/src/main/res/layout/item_employee.xml" value="0.4661458333333333" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.4270833333333333" />
+        <entry key="app/src/main/res/layout/notification_layout.xml" value="0.3854166666666667" />
         <entry key="app/src/main/res/menu/context_action_bar_menu.xml" value="0.3854166666666667" />
         <entry key="app/src/main/res/menu/float_context_menu.xml" value="0.346875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.24427083333333333" />
