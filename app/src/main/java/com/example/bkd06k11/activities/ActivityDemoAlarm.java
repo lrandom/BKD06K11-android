@@ -42,8 +42,5 @@ public class ActivityDemoAlarm extends AppCompatActivity {
                 jobScheduler.schedule(jobInfo);
             }
         });
-
     }
-
-
 }
