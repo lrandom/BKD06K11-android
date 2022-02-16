@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +24,8 @@ public class DemoExternalStorage extends AppCompatActivity {
         setContentView(R.layout.activity_demo_external_storage);
         //checkPermission();
         readExternalStorage();
-
+        //writePre();
+        readPre();
     }
 
     void checkPermission() {
@@ -56,11 +59,13 @@ public class DemoExternalStorage extends AppCompatActivity {
 
     public void writeExternalStorage() {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(
-                    new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(), "myData.txt")
-            );
-            fileOutputStream.write("Hello World".getBytes());
-            fileOutputStream.close();
+            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                FileOutputStream fileOutputStream = new FileOutputStream(
+                        new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(), "myData.txt")
+                );
+                fileOutputStream.write("Hello World".getBytes());
+                fileOutputStream.close();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,5 +88,17 @@ public class DemoExternalStorage extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void writePre() {
+        SharedPreferences preferences = getSharedPreferences("myData", Context.MODE_PRIVATE);
+        preferences.edit().putString("name", "Luan").commit();
+        preferences.edit().putString("address", "QN").commit();
+    }
+
+    public void readPre() {
+        SharedPreferences preferences = getSharedPreferences("myData", Context.MODE_PRIVATE);
+        String name = preferences.getString("name", "");
+        System.out.println(name);
     }
 }
