@@ -13,15 +13,15 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE users(\n" +
+        db.execSQL("CREATE TABLE notes(\n" +
                 "     id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                "\t name TEXT(200),\n" +
-                "\t address TEXT(200)\n" +
+                "\t title TEXT(200),\n" +
+                "\t content TEXT(1000)\n" +
                 ") ");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS users");
+        db.execSQL("DROP TABLE IF EXISTS notes");
     }
 }
