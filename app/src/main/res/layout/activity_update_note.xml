@@ -22,9 +22,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/idTvContent"
-        android:layout_width="0dp"
-        android:layout_height="270dp"
+        android:id="@+id/edtContent"
+        android:layout_width="360dp"
+        android:layout_height="174dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
@@ -38,14 +38,14 @@
         app:layout_constraintTop_toBottomOf="@+id/edtTitle" />
 
     <Button
-        android:id="@+id/btnAddNote"
+        android:id="@+id/btnUpdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="92dp"
         android:layout_marginEnd="24dp"
-        android:text="Button"
+        android:text="Update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idTvContent" />
+        app:layout_constraintTop_toBottomOf="@+id/edtContent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,37 +15,37 @@
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/idTvContent"
-        android:layout_width="0dp"
-        android:layout_height="270dp"
+        android:id="@+id/edtContent"
+        android:layout_width="373dp"
+        android:layout_height="179dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         android:lines="10"
+        android:text=" Content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTitle" />
 
     <Button
-        android:id="@+id/btnAddNote"
+        android:id="@+id/btnUpdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="92dp"
         android:layout_marginEnd="24dp"
-        android:text="Button"
+        android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idTvContent" />
+        app:layout_constraintTop_toBottomOf="@+id/edtContent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

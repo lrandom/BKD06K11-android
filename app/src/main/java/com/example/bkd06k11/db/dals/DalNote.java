@@ -55,7 +55,20 @@ public class DalNote {
         return notes;
     }
 
-    void close() {
+    public Note findById(Long id) {
+        Note note = new Note();
+        Cursor cursor = this.sqLiteDatabase.rawQuery("SELECT * FROM notes WHERE id=" + id, null);
+        if (cursor.moveToFirst()) {
+            @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex("title"));
+            @SuppressLint("Range") String content = cursor.getString(cursor.getColumnIndex("content"));
+            note.setId(id);
+            note.setTitle(title);
+            note.setContent(content);
+        }
+        return note;
+    }
+
+    public void close() {
         if (this.sqLiteDatabase != null) {
             this.sqLiteDatabase.close();
         }
