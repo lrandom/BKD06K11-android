@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.AddMoneyActivity"
+    tools:context=".activities.AddAmountActivity"
     android:padding="10dp"
     >
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edtInputDate"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="252dp"
@@ -18,14 +18,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:background="@drawable/input_text_style"
-        android:text="Name"
+        android:hint="Ngày"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edtInputAmount"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="48dp"
@@ -33,7 +33,7 @@
         android:padding="10dp"
         android:inputType="textPersonName"
         android:background="@drawable/input_text_style"
-        android:text="Name"
+        android:hint="Số tiền"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:id="@+id/rdoIsPlus"
         >
 
         <LinearLayout
@@ -68,6 +69,7 @@
     </RadioGroup>
 
     <Button
+        android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="thêm"
