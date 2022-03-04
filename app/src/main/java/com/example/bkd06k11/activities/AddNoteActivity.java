@@ -12,7 +12,8 @@ import com.example.bkd06k11.db.dals.DalNote;
 
 public class AddNoteActivity extends AppCompatActivity {
     EditText edtTitle, edtContent;
-    Button btnAdd;
+    Boolean isPlus = true;
+    Button  btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class AddNoteActivity extends AppCompatActivity {
         edtTitle = findViewById(R.id.edtTitle);
         edtContent = findViewById(R.id.edtContent);
 
-        btnAdd = findViewById(R.id.btnUpdate);
+        btnAdd = findViewById(R.id.btnSubmit);
         DalNote dalNote = new DalNote(AddNoteActivity.this);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

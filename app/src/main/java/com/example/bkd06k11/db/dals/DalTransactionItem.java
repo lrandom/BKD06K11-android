@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.bkd06k11.db.SqliteHelper;
 import com.example.bkd06k11.models.Note;
@@ -24,8 +25,9 @@ public class DalTransactionItem {
         ContentValues contentValues = new ContentValues();
         contentValues.put("purpose", purpose);
         contentValues.put("amount", amount);
-        contentValues.put("isPlus", isPlus);
+        contentValues.put("plus", isPlus);
         contentValues.put("dt", dt);
+        Log.w("TEST", dt);
         this.sqLiteDatabase.insert("tb_transactions", null, contentValues);
     }
 

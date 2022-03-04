@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    >
+    android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         style="bold"
@@ -56,10 +55,10 @@
             android:layout_height="42dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="36dp"
+            android:background="@drawable/input_text_style"
             android:ems="10"
             android:hint="Từ"
             android:inputType="textPersonName"
-            android:background="@drawable/input_text_style"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -78,9 +77,10 @@
             android:layout_width="342dp"
             android:layout_height="50dp"
             android:layout_marginBottom="16dp"
+            android:backgroundTint="#219653"
+            android:onClick="goToAddAmountActivity"
             android:text="Thêm"
             android:textStyle="normal"
-            android:backgroundTint="#219653"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

@@ -4,77 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activities.AddAmountActivity"
     android:padding="10dp"
-    >
+    tools:context=".activities.AddAmountActivity">
+
+    <EditText
+        android:id="@+id/edtPurpose"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/input_text_style"
+        android:ems="10"
+        android:hint="Mục đích"
+        android:inputType="textPersonName"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/edtInputDate"
         android:layout_width="match_parent"
         android:layout_height="42dp"
-        android:layout_marginTop="252dp"
-        android:padding="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginTop="48dp"
         android:background="@drawable/input_text_style"
+        android:ems="10"
         android:hint="Ngày"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:inputType="textPersonName"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/edtInputAmount"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginTop="48dp"
-        android:ems="10"
-        android:padding="10dp"
-        android:inputType="textPersonName"
         android:background="@drawable/input_text_style"
+        android:ems="10"
         android:hint="Số tiền"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        android:inputType="textPersonName"
+        android:padding="10dp" />
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/rdoIsPlus"
-        >
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
-            >
-
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioGroup
+                android:id="@+id/rdoIsPlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
             <RadioButton
+                android:id="@+id/rdoPlus"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginRight="40dp"
-                android:hint="Thu"></RadioButton>
+                android:hint="Thu"
+                android:onClick="onTypeRadioChecked"></RadioButton>
 
             <RadioButton
+                android:id="@+id/rdoSub"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginLeft="40dp"
-                android:hint="Chi"></RadioButton>
+                android:hint="Chi"
+                android:onClick="onTypeRadioChecked"></RadioButton>
+            </RadioGroup>
 
         </LinearLayout>
-    </RadioGroup>
 
     <Button
+        android:onClick="saveAmount"
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="thêm"
-        android:textAllCaps="true"
-        android:backgroundTint="#219653"
         android:layout_marginTop="15dp"
-        ></Button>
+        android:backgroundTint="#219653"
+        android:text="thêm"
+        android:textAllCaps="true"></Button>
 </LinearLayout>
