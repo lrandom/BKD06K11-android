@@ -82,5 +82,8 @@ public class AddAmountActivity extends AppCompatActivity {
         String amount = edtInputAmount.getText().toString();
         DalTransactionItem dalTransactionItem = new DalTransactionItem(AddAmountActivity.this);
         dalTransactionItem.addTransactionItem(purpose, new Double(amount), isPlus, inputDate);
+        edtInputDate.setText("");
+        edtPurpose.setText("");
+        edtInputAmount.setText("");
     }
 }

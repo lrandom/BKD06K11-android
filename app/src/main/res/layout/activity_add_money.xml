@@ -61,6 +61,7 @@
                 android:layout_height="20dp"
                 android:layout_marginRight="40dp"
                 android:hint="Thu"
+                android:checked="true"
                 android:onClick="onTypeRadioChecked"></RadioButton>
 
             <RadioButton

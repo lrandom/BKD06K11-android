@@ -101,16 +101,15 @@
             app:layout_constraintTop_toTopOf="@+id/view" />
 
         <TextView
-            android:id="@+id/tvMoneyIn"
+            android:id="@+id/tvTotalCollect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="40dp"
             android:text="TextView"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.221"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
@@ -126,17 +125,19 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvOut"
+            android:id="@+id/tvTotalSpent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="96dp"
             android:layout_marginTop="28dp"
             android:shadowColor="#FFFFFF"
             android:text="TextView"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/tvMoneyIn"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvTotalCollect"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
