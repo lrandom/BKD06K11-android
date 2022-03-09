@@ -1,6 +1,7 @@
 package com.example.bkd06k11.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +23,6 @@ public class StatementItemAdapter extends RecyclerView.Adapter<StatementItemAdap
     ArrayList<TransactionItem> notes = new ArrayList<>();
     public static String TAG = "NoteAdapter";
     // public NoteAdapter.MyItemClickListener myItemClickListener;
-    NoteAdapter.OnDeleteButtonClick onDeleteButtonClick;
-    NoteAdapter.OnUpdateButtonClick onUpdateButtonClick;
 
     public StatementItemAdapter(Context context, ArrayList<TransactionItem> notes) {
         this.context = context;
@@ -36,8 +35,19 @@ public class StatementItemAdapter extends RecyclerView.Adapter<StatementItemAdap
     public void onBindViewHolder(@NonNull StatementItemAdapter.StatementItemHolder holder,
                                  int position) {
         TransactionItem transactionItem = notes.get(position);
-        holder.tvAmount.setText(Helpers.formatCurrency(transactionItem.getAmount()));
+
         holder.tvPurpose.setText(transactionItem.getPurpose());
+        holder.tvDate.setText(transactionItem.getDateTime());
+        if (transactionItem.getPlus() == 1) {
+            //thu
+            holder.tvAmount.setText("+" + Helpers.formatCurrency(transactionItem.getAmount()));
+            holder.tvAmount.setTextColor(Color.parseColor("#219653"));
+        } else {
+            //chi
+            holder.tvAmount.setTextColor(Color.parseColor("#EB5757"));
+            holder.tvAmount.setText("-" + Helpers.formatCurrency(transactionItem.getAmount()));
+        }
+
     }
 
 
@@ -55,12 +65,13 @@ public class StatementItemAdapter extends RecyclerView.Adapter<StatementItemAdap
     }
 
     public class StatementItemHolder extends RecyclerView.ViewHolder {
-        TextView tvPurpose, tvAmount;
+        TextView tvPurpose, tvAmount, tvDate;
 
         public StatementItemHolder(@NonNull View itemView) {
             super(itemView);
             this.tvPurpose = itemView.findViewById(R.id.tvPurpose);
             this.tvAmount = itemView.findViewById(R.id.tvAmount);
+            this.tvDate = itemView.findViewById(R.id.tvDate);
         }
     }
 }

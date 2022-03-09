@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.bkd06k11.db.SqliteHelper;
-import com.example.bkd06k11.models.Note;
 import com.example.bkd06k11.models.TransactionItem;
 
 import java.util.ArrayList;
@@ -27,32 +26,23 @@ public class DalTransactionItem {
         contentValues.put("amount", amount);
         contentValues.put("plus", isPlus);
         contentValues.put("dt", dt);
-        Log.w("TEST", dt);
         this.sqLiteDatabase.insert("tb_transactions", null, contentValues);
     }
 
-    public void updateTransactionItem(Long id, String purpose, double amount, int isPlus, String dt) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("purpose", purpose);
-        contentValues.put("amount", amount);
-        contentValues.put("isPlus", isPlus);
-        contentValues.put("dt", dt);
-        this.sqLiteDatabase.update("tb_transactions", contentValues, "id =" + id, null);
-    }
 
-    public void deleteTransactionItem(Long id) {
-        this.sqLiteDatabase.delete("tb_transactions", "id =" + id, null);
-    }
-
-    public ArrayList<TransactionItem> getTransactionItems() {
+    public ArrayList<TransactionItem> getTransactionItems(String fromDate, String toDate) {
         ArrayList<TransactionItem> transactionItems = new ArrayList<>();
-        Cursor cursor = this.sqLiteDatabase.rawQuery("SELECT * FROM tb_transactions", null);
+        String query = "SELECT * FROM tb_transactions";
+        if (fromDate != null && toDate != null) {
+            query += " WHERE dt BETWEEN '" + fromDate + "' AND '" + toDate + "'";
+        }
+        Cursor cursor = this.sqLiteDatabase.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 @SuppressLint("Range") long id = cursor.getLong(cursor.getColumnIndex("id"));
                 @SuppressLint("Range") String purpose = cursor.getString(cursor.getColumnIndex("purpose"));
-                @SuppressLint("Range") Double amount = cursor.getDouble(cursor.getColumnIndex("double"));
-                @SuppressLint("Range") Integer isPlus = cursor.getInt(cursor.getColumnIndex("isPlus"));
+                @SuppressLint("Range") Double amount = cursor.getDouble(cursor.getColumnIndex("amount"));
+                @SuppressLint("Range") Integer isPlus = cursor.getInt(cursor.getColumnIndex("plus"));
                 @SuppressLint("Range") String dt = cursor.getString(cursor.getColumnIndex("dt"));
                 TransactionItem transactionItem = new TransactionItem();
                 transactionItem.setAmount(amount);
@@ -66,27 +56,14 @@ public class DalTransactionItem {
         return transactionItems;
     }
 
-    public TransactionItem findById(Long id) {
-        TransactionItem transactionItem = new TransactionItem();
-        Cursor cursor = this.sqLiteDatabase.rawQuery("SELECT * FROM tb_transactions WHERE id=" + id, null);
-        if (cursor.moveToFirst()) {
-            @SuppressLint("Range") String purpose = cursor.getString(cursor.getColumnIndex("purpose"));
-            @SuppressLint("Range") Double amount = cursor.getDouble(cursor.getColumnIndex("double"));
-            @SuppressLint("Range") Integer isPlus = cursor.getInt(cursor.getColumnIndex("isPlus"));
-            @SuppressLint("Range") String dt = cursor.getString(cursor.getColumnIndex("dt"));
-            transactionItem.setAmount(amount);
-            transactionItem.setId(id);
-            transactionItem.setPlus(isPlus);
-            transactionItem.setDateTime(dt);
-            transactionItem.setPurpose(purpose);
-        }
-        return transactionItem;
-    }
-
     //lấy về tổng chi
     @SuppressLint("Range")
-    public double getTotalSpend() {
-        Cursor cursor = this.sqLiteDatabase.rawQuery("SELECT SUM(amount) AS total_amount FROM tb_transactions WHERE plus=0", null);
+    public double getTotalSpend(String fromDate, String toDate) {
+        String sql = "SELECT SUM(amount) AS total_amount FROM tb_transactions WHERE plus=0";
+        if (fromDate != null && toDate != null) {
+            sql += " AND (dt BETWEEN '" + fromDate + "' AND '" + toDate + "')";
+        }
+        Cursor cursor = this.sqLiteDatabase.rawQuery(sql, null);
         Double totalAmount = 0.0;
         if (cursor.moveToFirst()) {
             totalAmount = cursor.getDouble(cursor.getColumnIndex("total_amount"));
@@ -96,8 +73,12 @@ public class DalTransactionItem {
 
     //lấy về tổng thu
     @SuppressLint("Range")
-    public double getTotalCollect() {
-        Cursor cursor = this.sqLiteDatabase.rawQuery("SELECT SUM(amount) AS total_amount FROM tb_transactions WHERE plus=1", null);
+    public double getTotalCollect(String fromDate, String toDate) {
+        String sql = "SELECT SUM(amount) AS total_amount FROM tb_transactions WHERE plus=1";
+        if (fromDate != null && toDate != null) {
+            sql += " AND (dt BETWEEN '" + fromDate + "' AND '" + toDate + "')";
+        }
+        Cursor cursor = this.sqLiteDatabase.rawQuery(sql, null);
         Double totalAmount = 0.0;
         if (cursor.moveToFirst()) {
             totalAmount = cursor.getDouble(cursor.getColumnIndex("total_amount"));

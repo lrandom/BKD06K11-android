@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="60dp"
+    android:layout_marginTop="10dp"
     android:background="@drawable/item_shadow"
     android:gravity="center_vertical"
     android:orientation="horizontal"
@@ -16,10 +17,25 @@
         android:textAllCaps="true"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvAmount"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+100.000"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+100.000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20-10-2022"
+            android:textColor="#CDCDCD" />
+    </LinearLayout>
+
+
 </LinearLayout>
