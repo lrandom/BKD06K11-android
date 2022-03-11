@@ -27,7 +27,9 @@
         <entry key="app/src/main/res/layout/activity_demo_frame_layout.xml" value="0.36367753623188404" />
         <entry key="app/src/main/res/layout/activity_demo_linear_layout.xml" value="0.36367753623188404" />
         <entry key="app/src/main/res/layout/activity_demo_notification.xml" value="0.3813405797101449" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.3109375" />
+        <entry key="app/src/main/res/layout/activity_home_news.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/layout/activity_list_employee.xml" value="0.4661458333333333" />
         <entry key="app/src/main/res/layout/activity_list_note.xml" value="0.2572463768115942" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -49,6 +51,7 @@
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.3677536231884058" />
         <entry key="app/src/main/res/layout/item_country.xml" value="0.31666666666666665" />
         <entry key="app/src/main/res/layout/item_employee.xml" value="0.4661458333333333" />
+        <entry key="app/src/main/res/layout/item_new.xml" value="0.2838541666666667" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.4270833333333333" />
         <entry key="app/src/main/res/layout/note_item.xml" value="0.2572463768115942" />
         <entry key="app/src/main/res/layout/notification_layout.xml" value="0.3854166666666667" />
@@ -56,8 +59,10 @@
         <entry key="app/src/main/res/menu/context_action_bar_menu.xml" value="0.3854166666666667" />
         <entry key="app/src/main/res/menu/float_context_menu.xml" value="0.346875" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/menu/news_menu_item.xml" value="0.4427083333333333" />
         <entry key="app/src/main/res/menu/popup_menu.xml" value="0.290625" />
         <entry key="app/src/main/res/xml/network_security_config.xml" value="0.4661458333333333" />
+        <entry key="app/src/main/res/xml/searchable.xml" value="0.4427083333333333" />
       </map>
     </option>
   </component>

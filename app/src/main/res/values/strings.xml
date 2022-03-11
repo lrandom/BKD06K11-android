@@ -12,4 +12,5 @@
     <string name="delete_successfully">Delete Successfully</string>
     <string name="edit_successfully">Edit Successfully</string>
     <string name="update">Update</string>
+    <string name="search_title">Seaching Title</string>
 </resources>
