@@ -13,4 +13,7 @@
     <string name="edit_successfully">Edit Successfully</string>
     <string name="update">Update</string>
     <string name="search_title">Seaching Title</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
